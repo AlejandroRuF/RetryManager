@@ -3,7 +3,7 @@ import time
 import re
 import concurrent.futures
 
-ventana_objetivo = ""  # Reemplaza con el nombre o parte del título de la ventana objetivo
+ventana_objetivo = "optimizer"  # Reemplaza con el nombre o parte del título de la ventana objetivo
 ventanas_procesadas = set()  # Guarda las ID de las ventanas Procesadas
 boton_a_pulsar = "aceptar" # Texto del boton a pulsar
 texto_dialog = "" # Texto descriptivo dentro del dialog para habilitar la opcion de filtrar por este
