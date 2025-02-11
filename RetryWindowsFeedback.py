@@ -27,7 +27,7 @@ def bucle_detectar():
                             print(f"{i + 1}. {titulo} (ID: {id_ventana})")
 
                             # Detectar si el título contiene la palabra objetivo y si el ID no ha sido procesado
-                            if ventana_objetivo.lower() in titulo.lower() and id_ventana not in ventanas_procesadas:
+                            if ventana_objetivo.lower() in titulo.lower().split(" ") and id_ventana not in ventanas_procesadas:
                                 print(f"\nVentana detectada: {titulo} (ID: {id_ventana})\n")
 
                                 ventanas_procesadas.add(id_ventana)

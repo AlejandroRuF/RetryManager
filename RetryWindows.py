@@ -3,7 +3,7 @@ import time
 import re
 import concurrent.futures
 
-ventana_objetivo = ""  # Reemplaza con el nombre o parte del título de la ventana objetivo
+ventana_objetivo = "optimizer"  # Reemplaza con el nombre o parte del título de la ventana objetivo
 ventanas_procesadas = set()  # Guarda las ID de las ventanas Procesadas
 boton_a_pulsar = "aceptar" # Texto del boton a pulsar
 texto_dialog = "" # Texto descriptivo dentro del dialog para habilitar la opcion de filtrar por este
@@ -25,7 +25,7 @@ def bucle_detectar():
 
                         if titulo:
                             # Detectar si el título contiene la palabra objetivo y si el ID no ha sido procesado
-                            if ventana_objetivo.lower() in titulo.lower() and id_ventana not in ventanas_procesadas:
+                            if ventana_objetivo.lower() in titulo.lower().split(" ") and id_ventana not in ventanas_procesadas:
                                 ventanas_procesadas.add(id_ventana)
                                 # Conectar a la ventana detectada
                                 app = Application(backend="uia").connect(handle=id_ventana)
@@ -111,7 +111,6 @@ def obtener_contenido_mensaje(dialogo):
 
 
 def filtro_contenido(texto_clave, mensaje):
-
     try:
         # Expresión regular
         patron = rf"\b{re.escape(texto_clave)}\b"
