@@ -1,0 +1,8 @@
+Generar requeriments.txt
+pip freeze > requirements.txt
+
+Instalar requeriments.txt
+pip install -r requirements.txt
+
+Generar exe
+pyinstaller --onefile AutoDatosViajeros.py
